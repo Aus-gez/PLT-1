@@ -17,7 +17,7 @@ api:
   reboot_timeout: 0s
   on_client_connected:
     then:
-      - delay: 15s
+      - delay: 5s
       - if:
           condition:
             or:
@@ -28,7 +28,7 @@ api:
                 ESP_LOGW("Apollo", "Preventing Deep Sleep Due To OTA Or Switch");
                 id(deep_sleep_1).prevent_deep_sleep(); 
           else:
-            - delay: 10s
+            - delay: 5s
             - lambda: |-
                 id(reportAllValues).execute();
             - delay: 10s
@@ -251,7 +251,7 @@ sensor:
     id: soil_adc
     attenuation: auto
     name: "Soil ADC"
-    update_interval: 5s
+    update_interval: 15s
     accuracy_decimals: 2
     entity_category: "diagnostic"
     disabled_by_default: true
