@@ -17,7 +17,7 @@ api:
   reboot_timeout: 0s
   on_client_connected:
     then:
-      - delay: 5s
+      - delay: 15s
       - if:
           condition:
             or:
@@ -31,7 +31,7 @@ api:
             - delay: 10s
             - lambda: |-
                 id(reportAllValues).execute();
-            - delay: 5s
+            - delay: 10s
             - deep_sleep.enter:
                 id: deep_sleep_1
 
